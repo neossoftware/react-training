@@ -4,6 +4,11 @@
 // must be stored in the public folder (as it's the case by default in this project)
 import reactImg from './assets/react-core-concepts.png';
 
+import componentsImg from './assets/components.png';
+import propsImg from './assets/config.png';
+import jsxImg from './assets/jsx-ui.png';
+import stateImg from './assets/state-mgmt.png';
+
 const reactDescriptions= [
   "React is a JavaScript library for building user interfaces",
   "React is declarative",
@@ -16,6 +21,17 @@ const reactDescriptions= [
 ];
 
 function genRandomInt(max)  { return Math.floor(Math.random() * (max+1)); }
+
+function CoreConcept(props) {
+  return(
+    <li> 
+      <img src={props.image} alt={props.title}/>
+      <h3>{props.title}</h3>
+      <p>{props.description}  </p>
+
+    </li>
+  )
+}
 
 function Header(){
 
@@ -38,9 +54,21 @@ function App() {
     <div>
      <Header />
 
-      <main>
+      <main><section id="core-concepts">
         <h2>Time to get started!</h2>
+        <ul >
+          <CoreConcept  title="Components"
+             description="The core UI build block"
+             image={componentsImg}></CoreConcept>
+
+            <CoreConcept  title="Properties"
+             description="Properties block"
+             image={propsImg}></CoreConcept>
+        </ul>
+        </section>
       </main>
+
+
 
       <footer>
         <table>

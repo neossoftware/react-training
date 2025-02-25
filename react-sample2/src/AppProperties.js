@@ -6,9 +6,14 @@
 import Header from './components/Header';
 import { CORE_CONCEPTS} from './data';
 import CoreConcept from './components/CoreConcept';
-
+import TabButton from './components/TabButton';
 
 function AppProperties() {
+
+    function myFunction(){
+        console.log("Hello! I am an alert box!!");    
+    }
+
   return (
       <div>
           <Header />
@@ -30,34 +35,16 @@ function AppProperties() {
 
               </ul>
           </section>
+          <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton onSelect={myFunction}>Components</TabButton>
+            <TabButton>JSX</TabButton>
+            <TabButton>Props</TabButton>
+          </menu> 
+        </section>
           </main>
 
-
-
-          <footer>
-              <table>
-                  <thead>
-                      <tr>
-                          <th>Column 1</th>
-                          <th>Column 2</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>Row 1, Cell 1</td>
-                          <td>Row 1, Cell 2</td>
-                      </tr>
-                      <tr>
-                          <td>Row 2, Cell 1</td>
-                          <td>Row 2, Cell 2</td>
-                      </tr>
-                      <tr>
-                          <td>Row 3, Cell 1</td>
-                          <td>Row 3, Cell 2</td>
-                      </tr>
-                  </tbody>
-              </table>
-          </footer>
       </div>
   );
 }
